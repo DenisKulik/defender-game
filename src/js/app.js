@@ -1,8 +1,11 @@
-import Game, {
-  GameSavingData,
-  readGameSaving as loadGame,
-  writeGameSaving as saveGame,
-} from './game';
+export function displayHealthLevel(player) {
+  const { health } = player;
 
-const game = new Game();
-game.start();
+  if (health > 50) return 'healthy';
+  if (health >= 15 && health <= 50) return 'wounded';
+  return 'critical';
+}
+
+export function sortByHealth(players) {
+  return players.sort((a, b) => b.health - a.health);
+}
