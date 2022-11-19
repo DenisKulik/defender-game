@@ -11,6 +11,8 @@
   },
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"]
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+		"comma-dangle": ["error", "only-multiline"],
+		"generators": "always"
   }
 }
