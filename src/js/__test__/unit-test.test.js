@@ -1,4 +1,4 @@
-import { displayHealthLevel, sortByHealth } from '../app';
+import { displayHealthLevel, sortByHealth } from '../unit-test';
 
 // displayHealthLevel
 test('should display health level for 0', () => {
