@@ -1,9 +1,8 @@
 import Character from './classes';
 
-export default class Math extends Character {
+export default class Mythical extends Character {
   constructor(name) {
     super(name);
-    this.defence = 40;
   }
 
   set stoned(flag) {
@@ -38,7 +37,7 @@ export default class Math extends Character {
   }
 }
 
-export class Daemon extends Math {
+export class Daemon extends Mythical {
   constructor(name) {
     super(name);
     this.type = 'Daemon';
@@ -47,7 +46,7 @@ export class Daemon extends Math {
   }
 }
 
-export class Magician extends Math {
+export class Magician extends Mythical {
   constructor(name) {
     super(name);
     this.type = 'Magician';
