@@ -54,3 +54,14 @@ export class Magician extends Mythical {
     this.defence = 40;
   }
 }
+
+export class Validator {
+  static validateUsername(name) {
+    return (
+      !/^[0-9_-]/.test(name) &&
+      !/[0-9]{4,}/.test(name) &&
+      !/[0-9_-]$/.test(name) &&
+      /^[\w-]+$/.test(name)
+    );
+  }
+}

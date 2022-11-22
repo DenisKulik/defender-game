@@ -1,5 +1,6 @@
-import Mythical, { Daemon, Magician } from '../math-regexp';
+import Mythical, { Daemon, Magician, Validator } from '../math-regexp';
 
+// Math
 test('should create a new character', () => {
   const mythical = new Mythical('Alex');
   const expected = {
@@ -65,4 +66,25 @@ test('should display an Error', () => {
   expect(() => mythical.attack).toThrow(
     new Error('The distance is not specified!')
   );
+});
+
+// Regexp
+test('should validate latin letters, dashes, lower slash', () => {
+  const username = 'Jemele_1-mag';
+  expect(Validator.validateUsername(username)).toBeTruthy();
+});
+
+test('should return false if there are more than 3 digits in a row', () => {
+  const username = 'Sahthn9999n';
+  expect(Validator.validateUsername(username)).toBeFalsy();
+});
+
+test('should return false if there are more than 3 digits in a row', () => {
+  const username = 'Sahthn9999n';
+  expect(Validator.validateUsername(username)).toBeFalsy();
+});
+
+test('should return false if there is a digit at the beginning of the line', () => {
+  const username = '7Uaralon';
+  expect(Validator.validateUsername(username)).toBeFalsy();
 });
