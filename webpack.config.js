@@ -10,6 +10,11 @@ module.exports = {
   },
   module: {
     rules: [
+			{
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
@@ -29,6 +34,9 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   optimization: {
     minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
